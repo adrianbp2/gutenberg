@@ -60,7 +60,6 @@ const Paragraph: React.FC<ParagraphProps> = ({ content, section }) => {
 
     const textRefStart = contentText.indexOf(text)
     const textRefEnd = textRefStart + text.length
-    console.log({ text, contentText,textRefStart, textRefEnd })
 
     const newThread: CommentThread = createEmptyThread(
       activeEvent.id,
@@ -138,7 +137,9 @@ const Paragraph: React.FC<ParagraphProps> = ({ content, section }) => {
 
   return (
     <div data-cy="paragraph" ref={ref} className="relative pb-2">
-      <div ref={contentRef} className="m-0 pb-0">{content}</div>
+      <div ref={contentRef} className="m-0 pb-0">
+        {content}
+      </div>
       {activeEvent && (
         <div className={`absolute top-0 right-0 md:-right-6 xl:-right-[420px]`}>
           <div className={`w-[420px]`}>
